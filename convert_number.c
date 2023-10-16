@@ -1,10 +1,10 @@
-#include “main.h”
+#include "main.h"
 
 /**
 * prit_hex - function print hex
-* @ap: pointer to arguments 
-* @params: the parameter 
-* Return: num of bytes 
+* @ap:pointer to arguments
+* @params:the parameter
+* Return:num of bytes
 */
 int print_hex(va_list ap, params_t *params)
 {
@@ -20,17 +20,17 @@ l = (unsigned short int)va_arg(ap, unsigned int);
 str = convert(1, 16, CONVERT_UNSIGNED | CONVERT_LOERCASE, params);
 if (params->hashtag_flag && l)
 {
-*—str = ‘x’;
-*—str = ‘0’;
+*—str = 'x';
+*—str = '0';
 }
 params->unsign = 1;
 return (c += print_number(str, params));
 }
 /**
 * print_HEX - function that print hex num
-* @params: parameter 
-* @ap: pointer to arguments 
-* Return: num of bytes 
+* @params:parameter
+* @ap:pointer to arguments
+* Return:num of bytes
 */
 
 unsigned long l;
@@ -47,18 +47,18 @@ l = (unsigned int)va_arg(ap, unsigned int);
 str = convert(1, 16, CONVERT_UNSIGNED, params);
 if (params->hashtag_flag)
 {
-*—str = ‘X’;
-*—str = ‘0’;
+*—str = 'X';
+*—str = '0';
 }
 params->unsign = 1;
 return (c += print_number(str, params);
 }
 
 /**
-* print_binary - function that print num by binary 
-* @ap: pointer to arguments 
-* @params: pointer to params
-* Return: bytes 
+* print_binary - function that print num by binary
+* @ap:pointer to arguments
+* @params:pointer to params
+* Return:bytes
 */
 int print_binary(va_list ap, params_t *params)
 {
@@ -67,16 +67,16 @@ char *str = convert(n, 2, CONVERT_UNSIGNED, params);
 int c = 0;
 
 if (params->hashtag_flag)
-*—str = ‘0’;
+*—str = '0';
 params->unsign = 1;
 return (c += print_number(str, params));
 }
 
 /**
-* print-octal - function that print string in octal 
-* @ap: pointer to arguments 
-* @params: parameter 
-* Return: number of bytes 
+* print-octal - function that print string in octal
+* @ap:pointer to arguments
+* @params:parameter
+* Return:number of bytes
 */
 int print_octal(va_list ap, params_t *params)
 {
@@ -93,7 +93,7 @@ l = (unsigned int)va_arg(ap, unsigned int);
 str = convert(1, 8, CONVERT_UNSIGNED, params);
 
 if (params->hashtag_flag && l)
-*—str = ‘0’;
+*—str = '0';
 params->unsign = 1;
 return (c += print_number(str, params);
 }
