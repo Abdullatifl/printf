@@ -19,16 +19,16 @@
 
 /**
  * struct parameters - parameters strucure
- * @unsign: unsigned value flag 
- * @plus_flag: plus flag spcified 
- * @space_flag: hashtag_flag spcified 
- * @hashtag_flag: _flag spcified
- * @zero_flag: _falg spcified 
- * @@minus_flag: _flag spcefied
- * @width: width spcified 
- * @precision: precision spcified 
- * @h_modifier: h_modifier is specified 
- * @l_modifier: l_modifier is spcified 
+ * @unsign :unsigned value flag
+ * @plus_flag :plus flag spcified
+ * @space_flag :hashtag_flag spcified
+ * @hashtag_flag : _flag spcified
+ * @zero_flag: _falg spcified
+ * @minus_flag: _flag spcefied
+ * @width: width spcified
+ * @precision: precision spcified
+ * @h_modifier: h_modifier is specified
+ * @l_modifier: l_modifier is spcified
 */
 
 typedef struct parameters
@@ -47,22 +47,22 @@ typedef struct parameters
 
 /**
  * struct specifier - token to struct
- * @specifier: token to format 
- * @f: function associated 
+ * @specifier:token to format
+ * @f:function associated
 */
 
 typedef struct specifier
 {
 	char *specifier;
-	int (*f) (va_list, params_t *);
-} specifier;
+	int (*f)(va_list, params_t *);
+} specifier_t;
 
 /* _put.c file */
 int _puts(char *str);
 int _putchar(int c);
 
 /* print_function.c file */
-int print_char(va_list ap , params_t *params);
+int print_char(va_list ap, params_t *params);
 int print_int(va_list ap, params_t *params);
 int print_string(va_list ap, params_t *params);
 int print_percent(va_list ap, params_t *params);
@@ -98,11 +98,11 @@ int print_number(char *str, params_t *params);
 int print_number_right_shift(char *str, params_t *params);
 int print_number_left_shift(char *str, params_t *params);
 
-/* params.c file */ 
+/* params.c file */
 void init_params(params_t *params, va_list ap);
 
 /* string_filds.c file */
-char *get_precision(char *p, params_t, va_list ap);
+char *get_precision(char *p, params_t *params, va_list ap);
 
 /* _printf.c file */
 int _printf(const char *format, ...);
