@@ -10,7 +10,7 @@
 int print_char(va_list ap, params_t *params)
 {
 	char pad_char = ' ';
-	unsigned int pad = 1, sum = 0, va_arg(ap, int);
+	unsigned int pad = 1, sum = 0, ch = va_arg(ap, int);
 
 	if (params->minus_flag)
 		sum += _putchar(ch);
@@ -56,13 +56,14 @@ int print_string(va_list ap, params_t *params)
 		switch ((int)(!str))
 		case 1:
 			str = NULL_STRING;
+
 		j = pad = _strlen(str);
 		if (params->precition < pad)
 			j = pad = params->precision;
 
 		if (params->minus_flag)
 		{
-			if (params->precision != UNIN_MAX)
+			if (params->precision != UNIT_MAX)
 				for (i = 0; i < pad; i++)
 					sum += _putchar(*str++);
 			else
@@ -73,9 +74,8 @@ int print_string(va_list ap, params_t *params)
 		if (!params->minus_flag)
 		{
 			if (params->precision != UNIT_MAX)
-				for (i = 0;
-						i < pad; i++)
-					sum += _putchar(*str);
+				for (i = 0; i < pad; i++)
+					sum += _putchar(*str++);
 			else
 				sum += _puts(str);
 		}
