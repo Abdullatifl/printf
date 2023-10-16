@@ -25,7 +25,7 @@ int (*get_specifier(char *s))(va_list ap, params_t *params)
 		{"R", print_rot13},
 		{NULL, NULL},
 	};
-	int = 0;
+	int i = 0;
 
 	while (specifiers[i].specifier)
 	{

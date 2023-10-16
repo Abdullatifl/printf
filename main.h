@@ -12,7 +12,9 @@
 
 #define NULL_STRING "(null)"
 
-#define PARAMS_INT {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
+#define va_arg(v,l) __builtin_va_arg(v,l)
+
+#define PARAMS_INIT {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
 
 #define CONVERT_LOWERCASE 1
 #define CONVERT_UNSIGNED  2
@@ -71,7 +73,7 @@ int print_S(va_list ap, params_t *params);
 /* number.c file */
 char *convert(long int num, int base, int flags, params_t *params);
 int print_unsigned(va_list ap, params_t *params);
-int print_adress(va_list ap, params_t *params);
+int print_address(va_list ap, params_t *params);
 
 /* specifier.c file */
 int (*get_specifier(char *s)) (va_list ap, params_t *params);

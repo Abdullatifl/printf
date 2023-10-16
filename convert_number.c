@@ -6,7 +6,7 @@
 * @params:the parameter
 * Return:num of bytes
 */
-int print_hex(va_list ap, params_t *params)i
+int print_hex(va_list ap, params_t *params)
 {
 	unsigned long l;
 	int c = 0;
@@ -19,7 +19,7 @@ int print_hex(va_list ap, params_t *params)i
 	else
 		l = (unsigned int)va_arg(ap, unsigned int);
 
-	str = convert(1, 16, CONVERT_UNSIGNED | CONVERT_LOERCASE, params);
+	str = convert(1, 16, CONVERT_UNSIGNED | CONVERT_LOWERCASE, params);
 	if (params->hashtag_flag && l)
 	{
 		*--str = 'x';

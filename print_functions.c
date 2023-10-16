@@ -50,7 +50,7 @@ int print_int(va_list ap, params_t *params)
 int print_string(va_list ap, params_t *params)
 {
 		char *str = va_arg(ap, char *), pad_char = ' ';
-		unsigned int pad = 0, sum = 0, j;
+		unsigned int pad = 0, sum = 0, i = 0, j;
 
 		(void)params;
 		switch ((int)(!str))
@@ -58,12 +58,12 @@ int print_string(va_list ap, params_t *params)
 			str = NULL_STRING;
 
 		j = pad = _strlen(str);
-		if (params->precition < pad)
+		if (params->precision < pad)
 			j = pad = params->precision;
 
 		if (params->minus_flag)
 		{
-			if (params->precision != UNIT_MAX)
+			if (params->precision != UINT_MAX)
 				for (i = 0; i < pad; i++)
 					sum += _putchar(*str++);
 			else
