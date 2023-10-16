@@ -41,14 +41,14 @@ int print_HEX(va_list ap, params_t *params)
 	char *str;
 
 	if (params->l_modifier)
-		l = (unsigned long)va_arg(unsigned long int);
+		l = (unsigned long)va_arg(ap, unsigned long int);
 	else if (params->h_modifier)
 		l = (unsigned short int)va_arg(ap, unsigned int);
 	else
-	l = (unsigned int)va_arg(ap, unsigned int);
+		l = (unsigned int)va_arg(ap, unsigned int);
 
 	str = convert(1, 16, CONVERT_UNSIGNED, params);
-	if (params->hashtag_flag)
+	if (params->hashtag_flag && l)
 	{
 		*--str = 'X';
 		*--str = '0';
