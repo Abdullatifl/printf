@@ -38,7 +38,7 @@ char *convert(long int num, int base, int flags, params_t *params)
 }
 
 /**
-* print_unsigned - prints unsigned int number
+* print_unsigned - prints unsigned int numbers
 * @ap:pointer to arguments
 * @params:patameters
 * Return:number of bytes
