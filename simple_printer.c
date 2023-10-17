@@ -57,28 +57,30 @@ int print_rev(va_list ap, params_t *params)
  * Return:number of bytes
  */
 
-
 int print_rot13(va_list ap, params_t *params)
 {
-	int i, index;
-	int count = 0;
-	char arr[] =
-"NOPQRSTUVWXYZABCDEFGHIJKLM	nopqrstuvwxyzabcdefghijklm";
-	char *a = va_arg(ap, char *);
-	(void)params;
+	char *string = va_arg(ap, char *);
+	int len = 52;
+	int i1 = 0;
+	int i2;
+	char pri[52] = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ";
+	char seg[52] = "nNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmM";
 
-	i = 0;
-	index = 0;
-	while (a[i])
+	if (string == NULL)
+		string = "(ahyy)";
+	while (string[i1])
 	{
-	if ((a[i] >= 'A' && a[i] <= 'Z') || (a[i] >= 'a' && a[i] <= 'z'))
-	{
-		index = a[i] - 65;
-		count += _putchar(arr[index]);
+		for (i2 = 0 ; i2 < len ; i2++)
+		{
+			if (string[i1] == pri[i2])
+			{
+				_putchar(seg[i2]);
+				break;
+			}
+		}
+		if (i2 == len)
+			_putchar(string[i1]);
+		i1++;
 	}
-	else
-	count += _putchar(a[i]);
-	i++;
-	}
-	return (count);
+	return (i1);
 }
