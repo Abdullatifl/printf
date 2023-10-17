@@ -3,29 +3,29 @@
 
 /**
  * get_precision - Calculates the precision for printing
- * @s:pointer to the format string
+ * @p:pointer to the format string
  * @params: pointer to a parameters structure
  * @ap: pointer to a variable argument list
  * Return: pointer
 */
 
-char *get_precision(char *s, params_t *params, va_list ap)
+char *get_precision(char *p, params_t *params, va_list ap)
 {
-	int d = 0;
+	int x = 0;
 
-	if (*s != '.')
-		return (s);
-	s++;
-	if (*s == '*')
+	if (*p != '.')
+		return (p);
+	p++;
+	if (*p == '*')
 	{
-		d = va_arg(ap, int);
-		s++;
+		x = va_arg(ap, int);
+		p++;
 	}
 	else
 	{
-		while (_isdigit(*s))
-			d = d * 10 + (*s++ - '0');
+		while (_isdigit(*p))
+			x = x * 10 + (*p++ - '0');
 	}
-	params->precision = d;
-	return (s);
+	params->precision = x;
+	return (p);
 }

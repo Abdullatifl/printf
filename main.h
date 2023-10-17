@@ -12,11 +12,10 @@
 
 #define NULL_STRING "(null)"
 
-<<<<<<< HEAD
-#define va_arg(v,l)__builtin_va_arg(v,l)
-=======
+
+/* #define va_arg(v,l)__builtin_va_arg(v,l) */
+
 /* #define va_arg(v, l) __builtin_va_arg(v, l) */
->>>>>>> b24d712ad8683f42ebf1072c6820a10f66f6ca52
 
 #define PARAMS_INIT {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, }
 
