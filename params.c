@@ -1,4 +1,4 @@
-#inlude "main.h"
+#include "main.h"
 
 /**
  * init_params - func
@@ -20,4 +20,4 @@ void init_params(params_t *params, va_list ap)
 	params->precision = UINT_MAX;
 	params->plus_flag = 0;
 	(void)ap;
-}	
+}
