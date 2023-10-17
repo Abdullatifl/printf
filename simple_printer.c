@@ -65,6 +65,7 @@ int print_rot13(va_list ap, params_t *params)
 	int i2;
 	char pri[52] = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ";
 	char seg[52] = "nNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmM";
+	(void)params;
 
 	if (string == NULL)
 		string = "(ahyy)";
