@@ -76,7 +76,7 @@ int print_binary(va_list ap, params_t *params)
 }
 
 /**
-* print-octal - function that print string in octal
+* print_octal - function that print string in octal
 * @ap:pointer to arguments
 * @params:parameter
 * Return:number of bytes
